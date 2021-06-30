@@ -225,7 +225,7 @@ module.exports = {
           mid: "84595839",
         },
         aplayer: {
-          fixed: false,
+          fixed: true,
           mini: true,
           autoplay: false,
           loop: "all", // 'all' | 'one' | 'none'
