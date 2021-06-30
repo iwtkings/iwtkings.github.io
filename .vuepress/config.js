@@ -225,10 +225,12 @@ module.exports = {
           mid: "84595839",
         },
         aplayer: {
-          fixed: true,
+          fixed: false,
           mini: true,
           autoplay: false,
           loop: "all", // 'all' | 'one' | 'none'
+          order: "list", // 'list' | 'random'
+          listFolded: true,
         },
         mobile: {
           cover: true,
