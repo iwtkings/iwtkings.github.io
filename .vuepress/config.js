@@ -198,21 +198,43 @@ module.exports = {
     //   },
     // ],
 
+    // [
+    //   // 背景音乐 插件1
+    //   "@vuepress-reco/vuepress-plugin-bgm-player",
+    //   {
+    //     audios: [
+    //       {
+    //         name: '강남역 4번 출구',
+    //         artist: 'Plastic / Fallin` Dild',
+    //         url: 'https://assets.smallsunnyfox.com/music/2.mp3',
+    //         cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
+    //       }
+    //     ],
+    //     autoShrink: true,
+    //     shrinkMode: "float"
+    //   }
+    // ],
+
     [
-      // 背景音乐
-      "@vuepress-reco/vuepress-plugin-bgm-player",
+      // 背景音乐 插件2
+      'meting',
       {
-        audios: [
-          {
-            name: '강남역 4번 출구',
-            artist: 'Plastic / Fallin` Dild',
-            url: 'https://assets.smallsunnyfox.com/music/2.mp3',
-            cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
-          }
-        ],
-        autoShrink: true,
-        shrinkMode: "float"
-      }
+        meting: {
+          server: "netease",
+          type: "playlist",
+          mid: "84595839",
+        },
+        aplayer: {
+          fixed: true,
+          mini: true,
+          autoplay: false,
+          loop: "all", // 'all' | 'one' | 'none'
+        },
+        mobile: {
+          cover: true,
+          lrc: false
+        }
+      },
     ],
 
     [
