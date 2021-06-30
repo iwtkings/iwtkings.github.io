@@ -66,6 +66,16 @@ module.exports = {
     ],
     // 侧边栏，根据路由自定义侧边栏
     "sidebar": {
+      "/blogs/ios/": [
+        "introduce",
+        "to-code",
+        "bug-project",
+      ],
+      "/blogs/uniapp/": [
+        "introduce",
+        "share-two",
+        "share-three"
+      ],
       "/articles/sanji/": [
         "",
         "theme",
@@ -167,11 +177,6 @@ module.exports = {
     ],
 
     [
-      // 好像没有生效
-      "vuepress-plugin-boxx"
-    ],
-
-    [
       // 评论、访问量
       "@vuepress-reco/vuepress-plugin-comments",
       {
@@ -223,6 +228,13 @@ module.exports = {
         }
       }
     ],
+
+    [
+      // 为博客文章自动随机添加名人名言或其他
+      "vuepress-plugin-boxx"
+    ],
+
+    // 图片放大组件，安装自动生效
 
   ]
 }

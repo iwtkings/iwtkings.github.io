@@ -10,8 +10,6 @@ tags:
  - bug工程
 ---
 
-# bug-project
-
 ## 关于升级iOS14之后，使用YBImageBrowser框架浏览图片之后显示黑屏的解决方案
 
 > 说明：
