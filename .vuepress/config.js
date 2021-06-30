@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         "text": "文章",
-        "icon": "reco-message",
+        "icon": "reco-document",
         "items": [
           {
             "text": "散记",
