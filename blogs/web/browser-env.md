@@ -38,5 +38,4 @@ const browser = function() {
      version, language
   }
 }
-
 ```
