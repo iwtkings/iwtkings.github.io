@@ -80,7 +80,8 @@ module.exports = {
         "",
         "theme",
         "plugin",
-        "api"
+        "api",
+        "china"
       ]
     },
     "type": "blog",

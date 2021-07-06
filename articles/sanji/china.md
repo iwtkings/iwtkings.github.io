@@ -1,8 +1,6 @@
 ---
 title: 中国
 date: 2021-07-06
-categories:
- - 散记
 tags:
  - 中国
  - china
