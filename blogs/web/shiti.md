@@ -128,7 +128,6 @@ timer1=>promise1=>timer2=>promise2
 // node 10及其之前
 timer1=>promise1=>timer2=>promise2 (如果是第二个定时器还未在完成队列中)
 timer1=>timer2=>promise1=>promise2 (如果是第二个定时器已经在完成队列中)
-复制代码
 ```
 
 ##### 8.ES6 Modules 相对于 CommonJS 的优势是什么？
@@ -222,7 +221,6 @@ Ioc是指依赖注入，简单理解就是借助于"第三方"实现具有依赖
   <div class="content">content</div>
   <div class="bottom">bottom</div>
 </div>
-复制代码
 html,
 body {
   padding: 0;
@@ -248,7 +246,6 @@ body {
   height: 100px;
   background: blue;
 }
-复制代码
 ```
 
 ##### 21.如何判断一个元素 CSS 样式溢出，从而可以选择性的加 title 或者 Tooltip?
@@ -284,7 +281,6 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-复制代码
 /* html */
 <div class="footer">
    <div class="left">
@@ -296,7 +292,6 @@ body {
     </div>
   </div>
 </div>
-复制代码
 ```
 
 ##### 23.什么是沙箱？浏览器的沙箱有什么作用？
@@ -309,7 +304,6 @@ body {
 
 ```html
 <input type="password" name="password" placeholder="请输入密码" autocomplete="new-password"/>
-复制代码
 ```
 
 ##### 25.Hash 和 History 路由的区别和优缺点？
@@ -507,7 +501,6 @@ interface 也可以被 class 类 implements，这里相当于声明了一个 int
 type Props = {
     [key in Link]: U;
 } & { type: string;}
-复制代码
 ```
 
 ##### 43.TypeScript 中 ?.、??、!.、_、** 等符号的含义？
@@ -524,7 +517,6 @@ Extract<T, U> -- 提取T中可以赋值给U的类型。
 NonNullable<T> -- 从T中剔除null和undefined。
 ReturnType<T> -- 获取函数返回值类型。
 InstanceType<T> -- 获取构造函数类型的实例类型。
-复制代码
 ```
 
 ##### 45.简单介绍一下 TypeScript 模块的加载机制？
@@ -643,7 +635,6 @@ InstanceType<T> -- 获取构造函数类型的实例类型。
 	   path: 'xxxx'
 	 }]  
 }
-复制代码
 ```
 
 ##### 52.TypeScript 中如何设置模块导入的路径别名？
@@ -935,7 +926,6 @@ Node是基于Chrome V8引擎开发的能使JavaScript在服务器端运行的运
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 82.发布 Npm 包如何指定引入地址？
@@ -944,7 +934,6 @@ Node是基于Chrome V8引擎开发的能使JavaScript在服务器端运行的运
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 83.如何发布开发项目的特定文件夹为 Npm 包的根目录？
@@ -1039,7 +1028,6 @@ commit格式如下:
 <BLANK LINE>
 <body>
 type - 提交 commit 的类型
-复制代码
 ```
 
 feat: 新功能
@@ -1077,7 +1065,6 @@ fix #xxx
 closes #xxx
 close #xxx
 closed #xxx
-复制代码
 ```
 
 ##### 95.Git Hook 在项目中哪些作用？
@@ -1174,7 +1161,6 @@ if(results) {
 }
 
 process.exit(0)
-复制代码
 ```
 
 把这个文件拷贝到 .git/hooks/pre-commit 下，并执行 chmod 777 pre-commit 就可以在每次 commit 的情况下检查之前文件是否有冲突。
@@ -1187,7 +1173,6 @@ process.exit(0)
 
 ```js
 'semi': ['error', 'always']
-复制代码
 ```
 
 常用规则
@@ -1334,7 +1319,6 @@ process.exit(0)
       "no-bitwise": 0, //不允许使用位运算符
       "no-plusplus": 0 //不允许使用++ --运算符
   }
-复制代码
 ```
 
 ##### 103.如何在 Vs Code 中进行 Lint 校验提示？如何在 Vs Code 中进行 Lint 保存格式化？
@@ -1358,7 +1342,6 @@ process.exit(0)
 {      
     "extends": ["prettier"] // prettier 一定要是最后一个，才能确保覆盖    
 }
-复制代码
 ```
 
 (可选，推荐) 然后再启用 eslint-plugin-prettier ，将 prettier 的 rules 以插件的形式加入到 ESLint 里面。这里插一句，为什么"可选" ？当你使用 Prettier + ESLint 的时候，其实格式问题两个都有参与，disable ESLint 之后，其实格式的问题已经全部由 prettier 接手了。那我们为什么还要这个 plugin？其实是因为我们期望报错的来源依旧是 ESLint ，使用这个，相当于把 Prettier 推荐的格式问题的配置以 ESLint rules 的方式写入，这样相当于可以统一代码问题的来源。
@@ -1371,7 +1354,6 @@ process.exit(0)
         "prettier/prettier": "error"      
     }    
 }
-复制代码
 ```
 
 将上面两个步骤和在一起就是下面的配置，也是官方的推荐配置
@@ -1381,7 +1363,6 @@ process.exit(0)
 {
   "extends": ["plugin:prettier/recommended"]
 }
-复制代码
 ```
 
 ##### 105.如何有效的识别 ESLint 和 Prettier 可能产生冲突的格式规则？如何解决此类规则冲突问题？
@@ -1416,7 +1397,6 @@ sourceMap就是一个信息文件，里面储存着打包前的位置信息。�
 
 ```js
 node --inspect-brk=0.0.0.0:8080 index.js
-复制代码
 ```
 
 - 打开chrome浏览器 地址栏输入`chrome://inspect`,在弹出的界面中输入ip:port即可调试。
@@ -1472,7 +1452,6 @@ cypress 、Selenium 、puppeteer、nightwatch
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 116.CDN 服务如何实现网络加速？
@@ -1724,7 +1703,6 @@ cat /dev/null > /home/omc/h.txt
 
 ```bash
 alias dev="npm run dev"
-复制代码
 ```
 
 - 保存之后重新打开terminal或者执行
@@ -1750,7 +1728,6 @@ alias dev="npm run dev"
 
 ```bash
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
-复制代码
 ```
 
 ##### 141.Session、Cookie 的区别和关联？如何进行临时性和永久性的 Session 存储？
@@ -1873,7 +1850,6 @@ CICD，持续集成和持续交付,各个部门合作同一个项目时，各种
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 152.Jenkins 如何配合 Node.js 脚本进行 CI / CD 设计？
@@ -1882,7 +1858,6 @@ CICD，持续集成和持续交付,各个部门合作同一个项目时，各种
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 153.如果让你设计一个通用的项目脚手架，你会如何设计？一个通用的脚手架一般需要具备哪些能力？
@@ -2027,7 +2002,6 @@ CICD，持续集成和持续交付,各个部门合作同一个项目时，各种
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ##### 165.一般的低代码平台需要具备哪些能力？
@@ -2126,7 +2100,6 @@ export default {
 	construct,
 	destruct,
 }
-复制代码
 ```
 
 ##### 167.实现一个简易的模板引擎
@@ -2341,7 +2314,6 @@ if (typeof module !== "undefined" && typeof exports === "object") {
 } else {
   window.parse = __PARSE__;
 }
-复制代码
 ```
 
 ##### 168.简单实现一个发布 / 订阅模式
@@ -2406,7 +2378,6 @@ const eventEmitter = {
     return _this;
   },
 };
-复制代码
 ```
 
 ##### 169.匹配出字符串中 const a = require('xxx') 中的 xxx
@@ -2415,7 +2386,6 @@ const eventEmitter = {
 
 ```js
 // 见试卷背面
-复制代码
 ```
 
 ## 参考文献
