@@ -1,7 +1,7 @@
 module.exports = {
   "title": "iwtkings个人博客",
   "description": "Share what, and share you can.",
-  "dest": "docs",
+  "dest": "doc", // 打包到该文件夹下
   "head": [
     [
       "link",
