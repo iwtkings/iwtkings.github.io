@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>axios 封装，API接口统一管理，支持动态API | iwtkings个人博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Share what, and share you can.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.25430759.css" as="style"><link rel="preload" href="/assets/js/app.bb2ff869.js" as="script"><link rel="preload" href="/assets/js/3.3ef7171e.js" as="script"><link rel="preload" href="/assets/js/1.f88caec1.js" as="script"><link rel="preload" href="/assets/js/26.49f45b95.js" as="script"><link rel="prefetch" href="/assets/js/10.1dc3d4a1.js"><link rel="prefetch" href="/assets/js/11.79fe3308.js"><link rel="prefetch" href="/assets/js/12.cbb207d8.js"><link rel="prefetch" href="/assets/js/13.c3c63838.js"><link rel="prefetch" href="/assets/js/14.1da1fe2b.js"><link rel="prefetch" href="/assets/js/15.e8121724.js"><link rel="prefetch" href="/assets/js/16.e18fabba.js"><link rel="prefetch" href="/assets/js/17.c56ac4cf.js"><link rel="prefetch" href="/assets/js/18.584f02ce.js"><link rel="prefetch" href="/assets/js/19.4dd3e532.js"><link rel="prefetch" href="/assets/js/20.bfdce13f.js"><link rel="prefetch" href="/assets/js/21.9d87b945.js"><link rel="prefetch" href="/assets/js/22.0bdc2a0c.js"><link rel="prefetch" href="/assets/js/23.970a1a3a.js"><link rel="prefetch" href="/assets/js/24.b14d8650.js"><link rel="prefetch" href="/assets/js/25.8ee37f42.js"><link rel="prefetch" href="/assets/js/27.49ad56b8.js"><link rel="prefetch" href="/assets/js/28.a6c08755.js"><link rel="prefetch" href="/assets/js/29.513bedcb.js"><link rel="prefetch" href="/assets/js/30.7830b6a8.js"><link rel="prefetch" href="/assets/js/31.c973cbb7.js"><link rel="prefetch" href="/assets/js/32.249d833c.js"><link rel="prefetch" href="/assets/js/33.c715d02f.js"><link rel="prefetch" href="/assets/js/34.21755dca.js"><link rel="prefetch" href="/assets/js/4.811f76a6.js"><link rel="prefetch" href="/assets/js/5.449b6dc1.js"><link rel="prefetch" href="/assets/js/6.c019f0e9.js"><link rel="prefetch" href="/assets/js/7.597a6161.js"><link rel="prefetch" href="/assets/js/8.b16c592d.js"><link rel="prefetch" href="/assets/js/9.decc4889.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25430759.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>iwtkings个人博客</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>Share what, and share you can.</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>iwtkings</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="iwtkings个人博客" class="logo"> <span class="site-name">iwtkings个人博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Android开发/" class="nav-link"><i class="undefined"></i>
+  Android开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/iOS开发/" class="nav-link"><i class="undefined"></i>
+  iOS开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/其他/" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uni-app开发/" class="nav-link"><i class="undefined"></i>
+  uni-app开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/web开发/" class="nav-link"><i class="undefined"></i>
+  web开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      文章
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/articles/sanji/" class="nav-link"><i class="undefined"></i>
+  散记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/iwtkings" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/iwtkings" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    iwtkings
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>24</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>21</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#67cc86;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-mayun" style="color:#f47e60;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Android开发/" class="nav-link"><i class="undefined"></i>
+  Android开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/iOS开发/" class="nav-link"><i class="undefined"></i>
+  iOS开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/其他/" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uni-app开发/" class="nav-link"><i class="undefined"></i>
+  uni-app开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/web开发/" class="nav-link"><i class="undefined"></i>
+  web开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      文章
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/articles/sanji/" class="nav-link"><i class="undefined"></i>
+  散记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/iwtkings" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/iwtkings" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>axios 封装，API接口统一管理，支持动态API</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>iwtkings</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">axios 封装，API接口统一管理，支持动态API</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>iwtkings</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>12/16/2021</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>web</span><span class="tag-item" data-v-1ff7123e>js</span><span class="tag-item" data-v-1ff7123e>axios</span></i></div></div> <div class="theme-reco-content content__default"><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/998ed3f6ceda47ada489dc9938c64f4e~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp" alt="axios 封装，API接口统一管理，支持动态API！"></p> <h2 id="分享一个自己封装的-axios-网络请求"><a href="#分享一个自己封装的-axios-网络请求" class="header-anchor">#</a> 分享一个自己封装的 axios 网络请求</h2> <h4 id="主要的功能及其优点"><a href="#主要的功能及其优点" class="header-anchor">#</a> 主要的功能及其优点：</h4> <p>将所有的接口放在一个文件夹中管理（api.js）。并且可以支持<strong>动态接口</strong>，就是 api.js 文件中定义的接口可以使用 <code>:xx</code> 占位，根据需要动态的改变。动态接口用法模仿的是<strong>vue的动态路由</strong>，如果你不熟悉动态路由可以看看我的这篇文章：<a href="https://link.juejin.cn/?target=https%3A%2F%2Fblog.csdn.net%2Fm0_46217225%2Farticle%2Fdetails%2F119808510%3Fspm%3D1001.2014.3001.5501" target="_blank" rel="noopener noreferrer">Vue路由传参详解（params 与 query）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="_1-封装请求"><a href="#_1-封装请求" class="header-anchor">#</a> 1.封装请求：</h4> <ol><li>首先在 src 目录下创建 http 目录。继续在 http 目录中创建 api.js 文件与 index.js 文件。</li> <li>然后再 main.js 文件中导入 http 目录下的 index.js 文件。将请求注册为全局组件。</li> <li>将下面<strong>封装所需代码</strong>代码粘到对应的文件夹</li></ol> <h4 id="_2-基本使用"><a href="#_2-基本使用" class="header-anchor">#</a> 2.基本使用：</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>//示例：获取用户列表
+getUsers() {
+  const { data } = await this.$http({
+    url: 'users' //这里的 users 就是 api.js 中定义的“属性名”
+  })
+},
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="_3-动态接口的使用"><a href="#_3-动态接口的使用" class="header-anchor">#</a> 3.动态接口的使用：</h4> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">//示例：删除用户</span>
+<span class="token function">deleteUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$http</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">'delete'</span><span class="token punctuation">,</span>
+    <span class="token comment">//动态接口写法模仿的是vue的动态路由</span>
+    <span class="token comment">//这里 params 携带的是动态参数，其中 “属性名” 需要与 api 接口中的 :id 对应</span>
+    <span class="token comment">//也就是需要保证携带参数的 key 与 api 接口中的 :xx 一致</span>
+    url<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 这里的 name 值就是 api.js 接口中的 “属性名”</span>
+      name<span class="token operator">:</span> <span class="token string">'usersEdit'</span><span class="token punctuation">,</span>
+      params<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> userinfo<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h4 id="_4-不足"><a href="#_4-不足" class="header-anchor">#</a> 4.不足：</h4> <p>封装的请求只能这样使用 <code>this.$http()</code> 。不能 <code>this.$http.get()</code> 或 <code>this.$http.delete()</code></p> <p>由于我感觉使用 <code>this.$http()</code> 这种就够了，所以没做其他的封装处理</p> <p>如果你有更好的想法可以随时联系我</p> <h4 id="如下是封装所需代码"><a href="#如下是封装所需代码" class="header-anchor">#</a> 如下是封装所需代码：</h4> <ul><li><strong>api.js 管理所有的接口</strong></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 如下接口地址根据自身项目定义</span>
+<span class="token keyword">const</span> <span class="token constant">API</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// base接口</span>
+  baseURL<span class="token operator">:</span> <span class="token string">'http://127.0.0.1:8888/api/private/v1/'</span><span class="token punctuation">,</span>
+  <span class="token comment">// 用户</span>
+  users<span class="token operator">:</span> <span class="token string">'/users'</span><span class="token punctuation">,</span>
+  <span class="token comment">// “修改”与“删除”用户接口（动态接口）</span>
+  usersEdit<span class="token operator">:</span> <span class="token string">'/users/:id'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token constant">API</span>
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li><strong>index.js 逻辑代码</strong></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 这里请求封装的主要逻辑，你可以分析并将他优化，如果有更好的封装方法欢迎联系我Q：2356924146</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">import</span> <span class="token constant">API</span> <span class="token keyword">from</span> <span class="token string">'./api.js'</span>
+
+<span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  baseURL<span class="token operator">:</span> <span class="token constant">API</span><span class="token punctuation">.</span>baseURL<span class="token punctuation">,</span>
+  timeout<span class="token operator">:</span> <span class="token string">'8000'</span><span class="token punctuation">,</span>
+  method<span class="token operator">:</span> <span class="token string">'GET'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 请求拦截器</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 此处编写请求拦截代码，一般用于加载弹窗，或者每个请求都需要携带的token</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'正在请求...'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 请求携带的token</span>
+    config<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>Authorization <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> config
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'请求失败'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 响应拦截器</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'响应成功'</span><span class="token punctuation">)</span>
+    <span class="token comment">//该返回对象会绑定到响应对象中</span>
+    <span class="token keyword">return</span> res
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'响应失败'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">//options 接收 {method, url, params/data}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    method<span class="token operator">:</span> options<span class="token punctuation">.</span>method<span class="token punctuation">,</span>
+    url<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token constant">URL</span> <span class="token operator">=</span> options<span class="token punctuation">.</span>url
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token constant">URL</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//拿到动态 url</span>
+        <span class="token keyword">let</span> DynamicURL <span class="token operator">=</span> <span class="token constant">API</span><span class="token punctuation">[</span><span class="token constant">URL</span><span class="token punctuation">.</span>name<span class="token punctuation">]</span>
+
+        <span class="token comment">//将 DynamicURL 中对应的 key 进行替换</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token constant">URL</span><span class="token punctuation">.</span>params<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          DynamicURL <span class="token operator">=</span> DynamicURL<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">':'</span> <span class="token operator">+</span> key<span class="token punctuation">,</span> <span class="token constant">URL</span><span class="token punctuation">.</span>params<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> DynamicURL
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">API</span><span class="token punctuation">[</span><span class="token constant">URL</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">//获取查询字符串参数</span>
+    params<span class="token operator">:</span> options<span class="token punctuation">.</span>params<span class="token punctuation">,</span>
+    <span class="token comment">//获取请求体字符串参数</span>
+    data<span class="token operator">:</span> options<span class="token punctuation">.</span>data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br></div></div><ul><li><strong>main.js 将请求注册为全局组件</strong></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+
+<span class="token comment">// 会自动导入 http 目录中的 index.js 文件</span>
+<span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">'./http'</span>
+
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$http <span class="token operator">=</span> http
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/web/axios.html#分享一个自己封装的-axios-网络请求" class="sidebar-link reco-side-分享一个自己封装的-axios-网络请求" data-v-70334359>分享一个自己封装的 axios 网络请求</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 iwtkings个人博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><APlayer audio="" fixed="true" mini="true" theme="#b7daff" loop="loop" order="list" preload="auto" volume="0.7" mutex="true" lrc-type="0" list-folded="true" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="Sakura" data-v-017cf06a><canvas id="canvas_sakura" style="z-index:-1;" data-v-017cf06a></canvas></div></div></div>
+    <script src="/assets/js/app.bb2ff869.js" defer></script><script src="/assets/js/3.3ef7171e.js" defer></script><script src="/assets/js/1.f88caec1.js" defer></script><script src="/assets/js/26.49f45b95.js" defer></script>
+  </body>
+</html>
