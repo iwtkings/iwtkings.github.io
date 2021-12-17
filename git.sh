@@ -2,6 +2,7 @@
 
 git pull
 
+rm -rf docs
 yarn build
 
 git add .
