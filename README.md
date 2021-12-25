@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: iwtking's blog
-tagline: Share what, and share you can.
+tagline: Share what Share you can
 # heroImage: /hero.png
 # heroImageStyle: {
 #   width: '100%',

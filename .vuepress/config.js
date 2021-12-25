@@ -1,6 +1,6 @@
 module.exports = {
-  "title": "iwtkings个人博客",
-  "description": "Share what, and share you can.",
+  "title": "王通的博客",
+  "description": "Share what Share you can",
   "dest": "docs", // 打包到该文件夹下
   "head": [
     [
@@ -121,10 +121,10 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "上次更新",
-    "author": "iwtkings",
+    "author": "王通",
     "authorAvatar": "/avatar.png",
     // 备案号
-    "record": "备案号：xxx",
+    "record": "备案号：000000",
     // 项目开始时间
     "startYear": "2017",
     "subSidebar": "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容

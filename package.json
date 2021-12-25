@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev . --open --host \"localhost\"",
+    "start": "vuepress dev . --open --host \"localhost\"",
     "build": "vuepress build ."
   },
   "devDependencies": {
