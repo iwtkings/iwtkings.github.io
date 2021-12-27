@@ -20,7 +20,6 @@ tags:
 ```Javascript
 const randomBoolean = () => Math.random() >= 0.5;
 console.log(randomBoolean());
-复制代码
 ```
 
 ## 判断一个日期是否是工作日
@@ -33,7 +32,6 @@ console.log(isWeekday(new Date(2021, 0, 11)));
 // Result: true (周一)
 console.log(isWeekday(new Date(2021, 0, 10)));
 // Result: false (周日)
-复制代码
 ```
 
 ## 反转字符串
@@ -44,7 +42,6 @@ console.log(isWeekday(new Date(2021, 0, 10)));
 const reverse = str => str.split('').reverse().join('');
 reverse('hello world');     
 // Result: 'dlrow olleh'
-复制代码
 ```
 
 ## 判断当前标签页是否为可视状态
@@ -54,7 +51,6 @@ reverse('hello world');
 ```Javascript
 const isBrowserTabInView = () => document.hidden;
 isBrowserTabInView();
-复制代码
 ```
 
 ## 判断数字为奇数或者偶数
@@ -67,7 +63,6 @@ console.log(isEven(2));
 // Result: true
 console.log(isEven(3));
 // Result: false
-复制代码
 ```
 
 ## 从 Date 对象中获取时间
@@ -80,7 +75,6 @@ console.log(timeFromDate(new Date(2021, 0, 10, 17, 30, 0)));
 // Result: "17:30:00"
 console.log(timeFromDate(new Date()));
 // Result: 返回当前时间
-复制代码
 ```
 
 ## 保留指定的小数位
@@ -94,7 +88,6 @@ toFixed(25.198726354, 3);       // 25.198
 toFixed(25.198726354, 4);       // 25.1987
 toFixed(25.198726354, 5);       // 25.19872
 toFixed(25.198726354, 6);       // 25.198726
-复制代码
 ```
 
 ## 检查指定元素是否处于聚焦状态
@@ -105,7 +98,6 @@ toFixed(25.198726354, 6);       // 25.198726
 const elementIsInFocus = (el) => (el === document.activeElement);
 elementIsInFocus(anyElement)
 // Result: 如果处于焦点状态会返回 True 否则返回 False
-复制代码
 ```
 
 ## 检查当前用户是否支持触摸事件
@@ -116,7 +108,6 @@ const touchSupported = () => {
 }
 console.log(touchSupported());
 // Result: 如果支持触摸事件会返回 True 否则返回 False
-复制代码
 ```
 
 ## 检查当前用户是否是苹果设备
@@ -127,7 +118,6 @@ console.log(touchSupported());
 const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
 console.log(isAppleDevice);
 // Result: 是苹果设备会返回 True
-复制代码
 ```
 
 ## 滚动至页面顶部
@@ -138,7 +128,6 @@ console.log(isAppleDevice);
 const goToTop = () => window.scrollTo(0, 0);
 goToTop();
 // Result: 将会滚动至顶部
-复制代码
 ```
 
 ## 获取所有参数的平均值
@@ -149,7 +138,6 @@ goToTop();
 const average = (...args) => args.reduce((a, b) => a + b) / args.length;
 average(1, 2, 3, 4);
 // Result: 2.5
-复制代码
 ```
 
 ## 转换华氏/摄氏

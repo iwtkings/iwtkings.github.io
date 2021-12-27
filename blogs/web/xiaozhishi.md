@@ -31,7 +31,6 @@ div {
     border: 5px solid transparent;
     border-top-color: red;
 }
-复制代码
 ```
 
 ## 3.水平垂直居中
@@ -49,7 +48,6 @@ div {
     left: 0;
     margin: auto;
 }
-复制代码
 ```
 
 父级控制子集居中
@@ -60,7 +58,6 @@ div {
     justify-content: center;
     align-items: center;
 }
-复制代码
 ```
 
 ## 4. css一行文本超出...
@@ -69,7 +66,6 @@ div {
 overflow: hidden;
 text-overflow:ellipsis;
 white-space: nowrap;
-复制代码
 ```
 
 ## 5.多行文本超出显示...
@@ -79,7 +75,6 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 3;
 overflow: hidden;
-复制代码
 ```
 
 ## 6.IOS手机容器滚动条滑动不流畅
@@ -87,7 +82,6 @@ overflow: hidden;
 ```
 overflow: auto;
 -webkit-overflow-scrolling: touch;
-复制代码
 ```
 
 ## 7.修改滚动条样式
@@ -99,7 +93,6 @@ div::-webkit-scrollbar {
     display: none;
     
 }
-复制代码
 ```
 
 div::-webkit-scrollbar 滚动条整体部分
@@ -143,7 +136,6 @@ music.onended = function () {
     music.load();
     music.play();
 }
-复制代码
 ```
 
 ## 9.隐藏页面元素
@@ -172,7 +164,6 @@ visibility-hidden：元素隐藏，但元素仍旧存在，占用空间，页面
 
 ```
 <div contenteditable="true"></div>
-复制代码
 ```
 
 不过通过这个属性把标签变为可编辑状态后只有`input`事件，没有`change`事件。也不能像表单一样通过`maxlength`控制最大长度。我也忘记我在什么情况下用到过了，后面想起来再补吧。
@@ -185,7 +176,6 @@ visibility-hidden：元素隐藏，但元素仍旧存在，占用空间，页面
 div {
     width: calc(25% - 20px);
 }
-复制代码
 ```
 
 ## 13.Date对象
@@ -199,7 +189,6 @@ Date.now(); // 1606381881650
 new Date() - 0; // 1606381881650
 // 方式三
 new Date().getTime() // 1606381881650
-复制代码
 ```
 
 创建`Date`对象的兼容性问题。
@@ -209,7 +198,6 @@ new Date().getTime() // 1606381881650
 new Date('2020-11-26'); 
 // window和安卓支持，ios和mac支持
 new Date('2020/11/26');
-复制代码
 ```
 
 ## 14.Proxy和Object.defineProperty区别
@@ -228,7 +216,6 @@ new Proxy(target, {
 
     }
 })
-复制代码
 ```
 
 `Proxy`区别于`Object.definedProperty`。
@@ -247,7 +234,6 @@ const listproxy = new Proxy(list, {
 });
 
 list.push(4);
-复制代码
 ```
 
 `Proxy`是以非入侵的方式监管了对象的读写，而`defineProperty`需要按特定的方式定义对象的属性。
@@ -268,7 +254,6 @@ const proxy = new Proxy(obj, {
         return Reflect.get(target, property);
     }
 })
-复制代码
 ```
 
 `Reflect`和`Proxy`没有绝对的关系，我们一般将他们两个放在一起讲是为了方便对二者的理解。
@@ -285,7 +270,6 @@ const proxy = new Proxy(obj, {
 const q = {};
 location.search.replace(/([^?&=]+)=([^&]+)/g,(_,k,v)=>q[k]=v);
 console.log(q);
-复制代码
 ```
 
 ## 17.解析连接url
@@ -304,7 +288,6 @@ aEle.origin;
 aEle.host;
 aEle.search;
 ...
-复制代码
 ```
 
 ## 18.localStorage
@@ -325,7 +308,6 @@ for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i); // 获取本地存储的Key
     localStorage[key]; // 获取本地存储的value
 }
-复制代码
 ```
 
 `localStorage`满了的情况下仍继续存储并不会覆盖其他的值，而是直接报错(`QuotaExceededError`)，并且当前存储的值也会被清空。浏览器支持每个域名下存储`5M`数据。
@@ -354,7 +336,6 @@ const tag = (params, ...args) => {
 }
 
 const str = tag`hello ${'world'}`;
-复制代码
 ```
 
 ## 22.字符串常用的几个方法
@@ -393,7 +374,6 @@ const arr = [1, 2, 3, 4, 5, 6];
 const arr2 = new Set(arr);
 
 const arr3 = [...arr2];
-复制代码
 ```
 
 ## 24.Object.keys, values, entries
@@ -410,7 +390,6 @@ Object.values(obj); // ['yd', 18];
 const l = Object.entries(obj); // [['name', 'yd'], ['age': 18]];
 
 const m = new Map(l);
-复制代码
 ```
 
 ## 25.Object.getOwnPropertyDescriptors
@@ -432,7 +411,6 @@ const p2 = Object.assign({}, p1);
 p2.a = 'z';
 
 p2.name; // y d; 发现并没有修改p2.a的值，是因为this仍旧指向p1
-复制代码
 ```
 
 使用`Object.getOwnPropertyDescriptors`获取完整描述信息
@@ -445,7 +423,6 @@ const p2 = Object.defineProperty({}, description);
 p2.a = 'z';
 
 p2.name; // z d
-复制代码
 ```
 
 ## 26.BigInt
@@ -454,7 +431,6 @@ p2.name; // z d
 
 ```
 consoel.log(Number.MAX_SAFE_INTEGER); //9007199254740991
-复制代码
 ```
 
 更大的数字则无法处理，`ECMAScript2020`引入`BigInt`数据类型来解决这个问题。通过把字母`n`放在末尾, 可以运算大数据。
@@ -470,7 +446,6 @@ console.log(bigInt); // 1n;
 
 const bigInt2 = BigInt('2222222222222222222');
 console.log(bigInt2); // 2222222222222222222n;
-复制代码
 ```
 
 BigInt是一个大整数，所以他不能用来存储小数。
@@ -484,7 +459,6 @@ const name = '';
 
 console.log(name || 'yd'); // yd;
 console.log(name ?? 'yd'); // '';
-复制代码
 ```
 
 ## 28.?可选链运算符
@@ -501,7 +475,6 @@ const a = {
 }
 console.log(a.b.c); // 123;
 console.log(a.f.c); // f不存在所以会报错
-复制代码
 ```
 
 `ECMAScript2020`定义可选链运算符解决该问题，通过在`.`之前添加一个`?`将键名变成可选
@@ -509,7 +482,6 @@ console.log(a.f.c); // f不存在所以会报错
 ```
 let person = {};
 console.log(person?.profile?.age ?? 18); // 18
-复制代码
 ```
 
 ## 29.import
@@ -520,7 +492,6 @@ console.log(person?.profile?.age ?? 18); // 18
 <script type="module">
 console.log('this is es module');
 </script>
-复制代码
 ```
 
 在`ES Module`规范下，会采用严格模式(`use strict`)运行`javascript`代码。每个`ES Module`都运行在单独的作用域中，也就意味着变量间不会互相干扰。外部`js`文件是通过`CORS`的方式请求的，所以要求我们外部的`js`文件地址要支持跨域请求，也就是文件服务器要支持`CORS`。我们可以在任意网站控制台输入下面代码。
@@ -533,7 +504,6 @@ script.type = 'module';
 script.innerHTML = `import React from 'https://cdn.bootcdn.net/ajax/libs/react/17.0.1/cjs/react-jsx-dev-runtime.development.js';`;
 
 document.body.append(script);
-复制代码
 ```
 
 可以发现在`network`中请求了`https://cdn.bootcdn.net/ajax/libs/react/17.0.1/cjs/react-jsx-dev-runtime.development.js`资源。
@@ -549,7 +519,6 @@ a.js
 ```
 const a = 123;
 export { a };
-复制代码
 ```
 
 b.js
@@ -558,14 +527,12 @@ b.js
 import('./a.js').then(data => {
     console.log(data.a); // 123;
 })
-复制代码
 ```
 
 ## 30. 0.1 + 0.2 === 0.3 // false
 
 ```
 console.log(0.1+0.2); // 0.30000000000000004
-复制代码
 ```
 
 在`JS`当中，`Number`类型实际上是`double`类型，运算小数时存在精度问题。因为计算机只认识二进制，在进行运算时，需要将其他进制的数值转换成二进制，然后再进行计算
@@ -578,7 +545,6 @@ console.log(0.1.toString(2)); // 0.000110011001100110011001100110011001100110011
 
 // 将0.2转换成二进制
 console.log(0.2.toString(2));  // 0.001100110011001100110011001100110011001100110011001101
-复制代码
 ```
 
 双精度浮点数的小数部分最多支持`53`位二进制位，所以两者相加后，因浮点数小数位的限制而截断的二进制数字，再转换为十进制，就成了`0.30000000000000004`，这样在进行算术计算时会产生误差。
@@ -592,7 +558,6 @@ Number.EPSILON
 // 2.220446049250313e-16
 Number.EPSILON.toFixed(20)
 // "0.00000000000000022204"
-复制代码
 ```
 
 `Number.EPSILON`实际上是`JavaScript`能够表示的最小精度。误差如果小于这个值，就可以认为已经没有意义了，即不存在误差了。

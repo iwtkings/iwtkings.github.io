@@ -32,7 +32,6 @@ getUsers() {
     url: 'users' //这里的 users 就是 api.js 中定义的“属性名”
   })
 },
-复制代码
 ```
 
 #### 3.动态接口的使用：
@@ -54,7 +53,6 @@ deleteUser() {
     },
   })
 },
-复制代码
 ```
 
 #### 4.不足：
@@ -82,7 +80,6 @@ const API = {
 
 export default API
 
-复制代码
 ```
 
 - **index.js 逻辑代码**
@@ -152,7 +149,6 @@ export default function(options = {}) {
   })
 }
 
-复制代码
 ```
 
 - **main.js 将请求注册为全局组件**
