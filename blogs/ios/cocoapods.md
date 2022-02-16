@@ -27,9 +27,14 @@ zsh: abort      pod install
 **解决办法如下：**
 
 ```
-sudo arch -x86_64 gem install ffi
-arch -x86_64 pod install
+使用 Rosetta 方式运行终端
+应用程序 -> 实用工具 -> 终端/terminal -> 右键 -> 显示简介 -> 勾选使用 Rosetta 打开
+```
+然后执行以下命令即可
+
+```
+sudo gem install cocoapods
+sudo gem install ffi
 ```
 
-执行以上命令即可。
 
