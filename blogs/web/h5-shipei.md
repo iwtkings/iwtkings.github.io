@@ -27,15 +27,12 @@ tags:
 ```javascrpit
   // 安装git
   npm i vant --save
-    
-复制代码
 ```
 
 除了安装UI组件库,我们还需要安装一些辅助工具 如`控制台(vconsole)`、`点击延迟解决方案(fastclick)`、`机型识别(ua-device)`等。当然你也可以使用自己擅长的其他库
 
 ```javascript
 npm i vconsole fastclick ua-device --save
-复制代码
 ```
 
 ## 手淘适配解决方案
@@ -48,8 +45,6 @@ npm i vconsole fastclick ua-device --save
 
 ```javascript
 npm i amfe-flexible postcss-pxtorem --save-dev
-
-复制代码
 ```
 
 安装完成后 我们需要进行`postcss`插件相关的配置 在根目录新建一个名为`postcss.config.js`的文件,如果项目中已包含该文件则无需新建。 在文件中写入如下代码:
@@ -63,8 +58,6 @@ module.exports = {
     }
   }
 }
-
-复制代码
 ```
 
 上面代码是在postcss中配置一个有关`postcss-pxtorem`的插件,其中rootValue的值表示要转换的倍数。当H5设计稿的width为375时，对应的 rem就等于 `375/37.5 = 10rem `当项目加载时,postcss会将插件`postcss-pxtorem`进行加载。`postcss-px`则负责将style中所有用`px`标记的样式转换成`rem`类型。 `propList`这个配置则表示要将那些css样式进行匹配转换。其中`*`表示匹配所有的css `!`表示不需要匹配的。
@@ -91,7 +84,6 @@ module.exports = {
    //类型为字符串或正则表达式或函数 要忽略并保留为 px 的文件路径。
   exclude：/ node_modules / i 
 }
-复制代码
 ```
 
 **值得注意的是:`postcss-pxtorem` 可能会将UI组件库也进行转换，若出现该问题，我们应该忽略掉vant相关的css**
@@ -116,7 +108,6 @@ if(process.env.NODE_ENV === 'development'){
   })
 }
 Vue.use(Toast).use(Dialog).use(Overlay).use(Vconsole)
-复制代码
 ```
 
 至此，我们的移动端适配就做好了，只需要按照设计稿的比例进行开发就可以了。

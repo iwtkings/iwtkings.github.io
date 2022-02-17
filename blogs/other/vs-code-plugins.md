@@ -380,7 +380,6 @@ tags:
     "param": "",
     "return": ""
   },
-复制代码
 ```
 
 ## Mithril Emmet
