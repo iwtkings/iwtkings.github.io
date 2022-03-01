@@ -25,12 +25,6 @@ tags:
 
 ![img](https://upload-images.jianshu.io/upload_images/943491-aa43b75b39a7ad85.gif?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
 
-terminal
-
-![img]()
-
-terminal
-
 本篇文章，带大家利用 [iTerm2](https://links.jianshu.com/go?to=https%3A%2F%2Fmakeoptim.com%2Ftool%2F(https%3A%2F%2Fwww.iterm2.com%2F)), [zsh](https://links.jianshu.com/go?to=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FZ_shell), [oh my zsh](https://links.jianshu.com/go?to=https%3A%2F%2Fohmyz.sh%2F), [powerlevel10k](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fromkatv%2Fpowerlevel10k) 快速打造一款“完美”终端。
 
 ## 安装
