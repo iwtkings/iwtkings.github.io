@@ -4,7 +4,7 @@ date: 2021-12-31
 categories:
  - 其他
 tags:
- -  vs code
+ - vs code
  - vscode
  - 插件
 ---
