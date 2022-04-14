@@ -1,6 +1,6 @@
 ---
 title: 工具 - 打造 Mac “完美”终端（Terminal），一篇就够了
-date: 2022-12-28
+date: 2021-12-28
 categories:
  - 终端
 tags:
