@@ -2,8 +2,8 @@
 
 git pull
 
-rm -rf docs
-yarn build
+# rm -rf docs
+# yarn build
 
 git add .
 git commit -m 'update'
