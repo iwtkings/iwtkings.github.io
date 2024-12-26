@@ -1,5 +1,5 @@
 module.exports = {
-  title: "王通的博客 33",
+  title: "王通的博客",
   description: "Share what Share you can",
   dest: "dist", // 打包到该文件夹下
   head: [
