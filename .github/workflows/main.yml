@@ -18,13 +18,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "20"
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
       # 部署
       - name: Deploy
