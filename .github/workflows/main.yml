@@ -27,8 +27,18 @@ jobs:
         run: yarn build
 
       # 部署
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
+      #   with:
+      #     branch: gh-pages # 部署后提交到那个分支
+      #     folder: dist # 这里填打包好的目录名称
+
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          branch: gh-pages # 部署后提交到那个分支
-          folder: dist # 这里填打包好的目录名称
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
